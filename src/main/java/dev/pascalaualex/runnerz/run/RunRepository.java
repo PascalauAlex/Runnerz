@@ -48,11 +48,12 @@ public class RunRepository {
         Assert.state(updated == 1, "Failed to update run" + run.title());
     }
 
-    public void delete(Integer id){
-        var delete = jdbcClient.sql("DELETE FROM Run WHERE id = :id")
-                .param("id",id)
+    public void delete(Integer id) {
+        var updated = jdbcClient.sql("delete from run where id = :id")
+                .param("id", id)
                 .update();
-        Assert.state(delete == 1, "Failed to delete run" + id);
+
+        Assert.state(updated == 1, "Failed to delete run " + id);
     }
 
     public int count(){

@@ -22,14 +22,14 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner(RunRepository runRepository) {
-        return args -> {
-            Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plusHours(1), 5, Location.OUTDOOR);
-            runRepository.create(run);
-            log.info("Run{}", run);
-        };
-    }
+//    @Bean
+//    CommandLineRunner runner(RunRepository runRepository) {
+//        return args -> {
+//            Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plusHours(1), 5, Location.OUTDOOR);
+//            runRepository.create(run);
+//            log.info("Run{}", run);
+//        };
+//    }
 }
 
 
