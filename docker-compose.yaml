@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: runnerz
+    environment:
+      POSTGRES_DB: runnerz
+      POSTGRES_USER: alex
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_runnerz:/var/lib/postgresql/runnerz/data
+
+
+volumes:
+  postgres_data_runnerz:
